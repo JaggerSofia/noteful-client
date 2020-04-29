@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home/Home';
 import NoteDetail from './NoteDetail/NoteDetail';
-import NoteContext from './NoteContext';
+import ApiContext from './ApiContext';
 import AddFolder from './AddFolder/AddFolder';
 import AddNote from './AddNote/AddNote';
 import NoteDetailError from './NoteDetailError/NoteDetailError';
@@ -124,7 +124,7 @@ class App extends React.Component {
   }
   
   render() {
-    const noteContext = {
+    const apiContext = {
       folders: this.state.folders,
       notes: this.state.notes,
       updateFolderId: this.updateFolderId,
@@ -137,7 +137,7 @@ class App extends React.Component {
     };
 
     return (
-      <NoteContext.Provider value={noteContext}>
+      <ApiContext.Provider value={apiContext}>
         <div className="App">
           <Link to="/" style={{ textDecoration: 'none' }}>
             <h1 className="main-header" onClick={() => this.updateFolderId(null)}>Noteful</h1>
@@ -146,7 +146,7 @@ class App extends React.Component {
             {this.renderPage()}
           </main>
         </div>
-      </NoteContext.Provider>
+      </ApiContext.Provider>
     );
   }
   
