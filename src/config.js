@@ -1,1 +1,1 @@
-export const API_ENDPOINT = 'https://safe-chamber-60095.herokuapp.com/';
+export const API_ENDPOINT = 'https://safe-chamber-60095.herokuapp.com';
